@@ -6,7 +6,7 @@ import tkinter as tk
 
 WINDOW_BG = "#212328"
 WINDOW_TITLE = "Steam-Phish"
-WINDOW_SIZE = "800x500"
+WINDOW_SIZE = "500x600"
 
 
 def main() -> None:
@@ -15,16 +15,6 @@ def main() -> None:
     root.geometry(WINDOW_SIZE)
     root.configure(bg=WINDOW_BG)
     root.resizable(False, False)
-
-    # Add a simple label so the window is not empty.
-    label = tk.Label(
-        root,
-        text="Placeholder window",
-        bg=WINDOW_BG,
-        fg="white",
-        font=("Segoe UI", 12),
-    )
-    label.pack(expand=True)
 
     root.mainloop()
 
