@@ -8,7 +8,7 @@ import tkinter as tk
 
 WINDOW_BG = "#1e1f22"
 WINDOW_TITLE = "Steam-Phish"
-WINDOW_SIZE = "500x600"
+WINDOW_SIZE = "800x500"
 
 
 def main() -> None:
@@ -24,13 +24,7 @@ def main() -> None:
     title_bar = tk.Frame(root, bg=WINDOW_BG, height=36)
     title_bar.pack(side="top", fill="x")
 
-    title_label = tk.Label(
-        title_bar,
-        text=WINDOW_TITLE,
-        bg=WINDOW_BG,
-        fg="#c7c9cc",
-    )
-    title_label.pack(side="left", padx=12, pady=8)
+    # No title text label per requirements
 
     # Close button inside a wrapper frame to draw a red square outline on hover
     close_wrap = tk.Frame(title_bar, bg=WINDOW_BG)
@@ -40,19 +34,19 @@ def main() -> None:
         bg=WINDOW_BG,
         fg="#c7c9cc",
         width=2,
-        cursor="hand2",
     )
-    close_label.pack(padx=1, pady=1)
+    close_label.pack(padx=0, pady=0)
     close_wrap.pack(side="right", padx=8, pady=8)
 
     def on_close(_event=None) -> None:
         root.destroy()
 
     def on_close_enter(_event=None) -> None:
-        close_wrap.configure(bg="#ff3b30")
+        # Fill entire square with red; keep only the cross visible
+        close_label.configure(bg="#e22a27", fg="#ffffff")
 
     def on_close_leave(_event=None) -> None:
-        close_wrap.configure(bg=WINDOW_BG)
+        close_label.configure(bg=WINDOW_BG, fg="#c7c9cc")
 
     close_label.bind("<Button-1>", on_close)
     close_label.bind("<Enter>", on_close_enter)
