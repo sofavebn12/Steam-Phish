@@ -8,7 +8,7 @@ import tkinter as tk
 
 WINDOW_BG = "#1e1f22"
 WINDOW_TITLE = "Steam-Phish"
-WINDOW_SIZE = "800x500"
+WINDOW_SIZE = "600x350"
 
 
 def main() -> None:
@@ -42,8 +42,8 @@ def main() -> None:
         root.destroy()
 
     def on_close_enter(_event=None) -> None:
-        # Fill entire square with red; keep only the cross visible
-        close_label.configure(bg="#e22a27", fg="#ffffff")
+        # Fill entire square with red; keep the cross visible (gray)
+        close_label.configure(bg="#e22a27", fg="#c7c9cc")
 
     def on_close_leave(_event=None) -> None:
         close_label.configure(bg=WINDOW_BG, fg="#c7c9cc")
